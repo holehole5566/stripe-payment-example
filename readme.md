@@ -19,6 +19,10 @@ stripe trigger payment_intent.succeeded
 ## payment system design
 https://youtu.be/kuoyb474EIA?si=n7_7GxeaVgkrjtJY
 
+## official emample code:
+
+https://docs.stripe.com/payments/quickstart
+
 
 
 ## flow
