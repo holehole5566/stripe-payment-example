@@ -12,18 +12,21 @@ app = FastAPI()
 # CORS for React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Stripe API Key (測試用)
-stripe.api_key = "sk_test_********************"
+stripe.api_key = ""
 
 @app.post("/create-payment-intent")
 async def create_payment_intent(req: PaymentRequest):
     try:
+        if req.amount <= 0:
+            raise HTTPException(status_code=400, detail="Amount must be greater than zero")
+        print (f"Creating payment intent for amount: {req.amount} TWD")
         intent = stripe.PaymentIntent.create(
             amount=req.amount * 100,  # Stripe 單位是分
             currency="twd",
