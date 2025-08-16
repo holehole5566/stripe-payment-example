@@ -22,7 +22,7 @@ https://youtu.be/kuoyb474EIA?si=n7_7GxeaVgkrjtJY
 
 
 ## flow
-
+```
 [ React 前端 ]
    |
    | 1. 輸入金額 → POST /create-payment-intent
@@ -44,3 +44,4 @@ https://youtu.be/kuoyb474EIA?si=n7_7GxeaVgkrjtJY
    | 5. 驗證簽名 (by endpoint_secret)
    | 6. 更新訂單表狀態 (paid / failed)
    | 7. 插入付款明細 (payments table)
+```
